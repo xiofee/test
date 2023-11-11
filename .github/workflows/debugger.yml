@@ -1,0 +1,16 @@
+name: debugger
+env:
+    TZ: Asia/Shanghai
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-12
+
+    steps:
+    - name: keepalive
+      run: |
+        touch /tmp/keepalive
+    - uses: csexton/debugger-action@master
